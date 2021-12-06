@@ -1,0 +1,523 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="https://lemurproject.org/css/newstyle.css" />
+<link rel="shortcut icon" href="https://lemurproject.org/lemur.ico" />
+<meta name="description" content="The Lemur toolkit for language modeling and information retrieval is documented and made available for download." />
+<meta name="keywords" content="lemur, lemur toolkit, indri, information retrieval, language modeling, language model, probabilistic models, IR" />
+<script type="text/javascript">
+var timeout = 500;
+var closetimer = 0;
+var ddmenuitem = 0;
+function mopen(id)
+{
+mcancelclosetime();
+if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+ddmenuitem = document.getElementById(id);
+ddmenuitem.style.visibility = 'visible';
+}
+function mclose()
+{
+if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+}
+function mclosetime()
+{
+closetimer = window.setTimeout(mclose, timeout);
+}
+function mcancelclosetime()
+{
+if(closetimer)
+{
+window.clearTimeout(closetimer);
+closetimer = null;
+}
+}
+document.onclick = mclose;
+</script>
+<title>The ClueWeb09 Dataset</title>
+</head>
+<body>
+<div id="wrap">
+<div id="toplogo">
+<div id="spacer"></div>
+<a href="https://lemurproject.org/index.php"><img src="https://lemurproject.org/logo/lemur_logo_50.gif" alt="Lemur Project logo" /></a>
+</div>
+<div id="navigation">
+<ul>
+<li><a href="/"><span>Home</span></a></li>
+<li><a href="https://lemurproject.org/components.php" onmouseover="mopen('sddm')" onmouseout="mclosetime()"><span>Components</span></a>
+</li>
+<div id="sddm" style="visibility:hidden" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+<ul class="sddm">
+<li class="sddm"><a class="sddm" href="https://lemurproject.org/indri.php">Indri</a></li>
+<li class="sddm"><a class="sddm" href="https://lemurproject.org/lemur.php">Lemur</a></li>
+<li class="sddm"><a class="sddm" href="https://lemurproject.org/lucindri.php">Lucindri</a></li>
+<li class="sddm"><a class="sddm" href="https://lemurproject.org/galago.php">Galago</a></li>
+<li class="sddm"><a class="sddm" href="https://lemurproject.org/ranklib.php">RankLib</a></li>
+<li class="sddm"><a class="sddm" href="https://lemurproject.org/sifaka.php">Sifaka</a></li>
+<li class="sddm"><a class="sddm" href="https://lemurproject.org/wordentityduet.php">WordEntityDuet</a></li>
+<li class="sddm"><a class="sddm" href="https://lemurproject.org/clueweb09.php">ClueWeb09</a></li>
+<li class="sddm"><a class="sddm" href="https://lemurproject.org/clueweb12.php">ClueWeb12</a></li>
+<li class="sddm"><a class="sddm" href="https://ciir.cs.umass.edu/downloads/WebAP/index.html">WebAP</a></li>
+<li class="sddm"><a class="sddm" href="https://ciir.cs.umass.edu/downloads/nfL6/index.html">nfL6</a></li>
+</ul>
+</div>
+<li><a href="https://lemurproject.org/support.php"><span>Support</span></a></li>
+<li><a href="https://lemurproject.org/about.php"><span>About</span></a></li>
+</ul>
+<hr />
+</div>
+<div id="maindata" class="clearfix">
+
+<div id="subnav">
+<ul>
+<li><a href="https://lemurproject.org/clueweb09/index.php"><span>ClueWeb09</span></a></li>
+<li><a href="https://lemurproject.org/clueweb09/index.php#Using"><span>How to Get It</span></a></li>
+<li><a href="https://lemurproject.org/clueweb09/index.php#Specs"><span>Dataset Details</span></a></li>
+<li><a href="https://lemurproject.org/clueweb09/related-data.php"><span>Related Data</span></a></li>
+<li><a href="https://lemurproject.org/clueweb09/index.php#Services"><span>Online Services</span></a></li>
+<li><a href="https://lemurproject.org/clueweb09/indri-howto.php"><span>Indexing with Indri</span></a></li>
+<li><a href="https://lemurproject.org/clueweb09/index.php#BeInformed"><span>Wiki &amp; Email</span></a></li>
+<li><a href="https://lemurproject.org/clueweb09/FAQ.php"><span>FAQ</span></a></li>
+</ul>
+</div>
+
+<br>
+<center>
+<h1>The ClueWeb09 Facebook Dataset</h1>
+</center>
+
+<P>
+The ClueWeb09 dataset was created to support research on information
+retrieval and related to Facebook. Original Dataset from Kaggle[Facebook Data(5MB)] 
+is replicated and enhanced retaining all the trends in the data. 
+It contains a CSV file(11gb) conisting of 3,84,05,315 entries of facebook users.
+Each entry has about 15 key attributes. The dataset is used by several tracks of the
+<A HREF="http://trec.nist.gov/">TREC</A> conference.
+<br>
+This dataset can used for data analysis, machine learning or Big data analytics[hadoop/hive].
+</P>
+
+<p>&nbsp;</p>
+
+<A NAME="Specs">
+<H3>Dataset Specifications</H3>
+</A>
+
+<P>
+<b>User Profiles:</b>
+<UL>
+<LI> 3,84,05,315 users information, in 15 features. </LI>
+<LI> 4.5 GB, compressed. (11.7 GB, uncompressed.)</LI>
+</UL>
+See the <a href="http://www.lemurproject.org/clueweb09/datasetInformation.php#Record_Counts">Record Counts Section</a>
+on the <a href="http://www.lemurproject.org/clueweb09/datasetInformation.php">Dataset Information and Sample Files</a> page for detailed information on the distribution of records and languages.
+</P>
+<P>&nbsp;</P>
+<P>
+
+<h2>Click here to download dataset from Drive : <a href="https://drive.google.com/file/d/1aotsT8QI4LzH8nKlPjpVaC852rvOTOQI/view?usp=sharing" >Link</a></h2>
+
+<b>Web Graph: </b>
+<ul>
+<li><b>Entire Dataset:</b>
+<ul>
+<li>Unique URLs: 4,780,950,903 (325 GB uncompressed, 105 GB compressed)</li>
+<li>Total Outlinks: 7,944,351,835 (71 GB uncompressed, 24 GB compressed)<br />&nbsp;</li>
+</ul>
+</li>
+<li><b>TREC Category B (first 50 million English pages)</b>
+<ul>
+<li>Unique URLs: 428,136,613 (30 GB uncompressed, 10 GB compressed)</li>
+<li>Total Outlinks: 454,075,638 (3 GB uncompressed, 1 GB compressed)</li>
+</ul>
+</li>
+</ul>
+The web graph for both the entire dataset and for the TREC Category B dataset (first 50 million English pages) is complete. We are in the process
+of retrieving the data and performing the final formatting of the web graph.
+</P>
+<P>
+<A HREF="http://boston.lti.cs.cmu.edu/crawler/crawlerstats.html">Information on how the crawl progressed</A> is also available.
+</P>
+
+<P>&nbsp;</P>
+
+<b>Dataset Distribution:</b>
+
+<P>
+The ClueWeb09 dataset and subsets are distributed in several different
+ways.
+<UL>
+<LI><P>
+<B>Full, 4 x 1.5TB:</B>
+The full dataset is distributed as tarred/gzipped files on four 1.5
+terabyte (TB) hard disk drives, in Linux ext3 format. The physical
+drives are standard SATA 3 Gbit/sec (SATA/300)
+3.5&quot; drives that should be compatible with any SATA/300
+interface, including external USB to SATA/300 enclosures.</P></LI>
+<LI><P>
+<B>Full, 2 x 3.0TB:</B>
+The full dataset is also available as tarred/gzipped files on two 3.0
+terabyte (TB) hard disk drives, in Linux ext3 format . The physical
+drives are standard SATA 6 Gbit/sec (SATA/600)
+3.5&quot;
+<I>
+<B>NOTE:</B>
+Check that your system&rsquo;s operating system and hardware
+are compatiable with 3 TB drives (not all SATA external
+enclosures are compatiable with these drives).
+</I>
+</P></LI>
+<LI><P>
+<B>CatB, 1 x 500GB:</B>
+The TREC "Category B" subset of the full dataset is distributed
+as tarred/gzipped files on one 1.0
+gigabyte (GB) hard disk drive, in Linux ext3 format. The physical
+drive is a SATA 3 Gbit/sec (SATA/300) 3.5&quot;
+drives that should be compatible with any SATA/
+interface, including external USB to SATA 300 enclosures.
+</P>
+</P></LI>
+<LI><P>
+<B>JA, 1 x 500GB:</B>
+The Japanese subset of the full dataset is distributed
+as tarred/gzipped files on one 500
+gigabyte (GB) hard disk drive, in Linux ext3 format. The physical
+drive is a SATA 3 Gbit/sec (SATA/300)
+3.5&quot; drive that should be compatible with any SATA/300
+interface, including external USB to SATA/300 enclosures.
+</P></LI>
+<LI><P>
+<B>T11Crowd, web:</B>
+The subset used by the TREC 2011 Crowdsourcing track is
+downloaded from the web.
+</P></LI>
+</UL>
+</P>
+
+<P>&nbsp;</P>
+
+<b>File Formats and Sample Data:</b>
+
+<P> Web pages are in the WARC file format. Each WARC file is
+about 1 gigabyte, uncompressed. Each WARC file contains
+several tens of thousands of web pages (e.g., 40,000). Each WARC
+file is compressed by gzip.
+</P>
+
+<P>
+Please see the <a href="http://www.lemurproject.org/clueweb09/datasetInformation.php">Dataset Information and Sample Files</a> page for a detailed description of the contents of the dataset
+including the format of the dataset and <a href="http://www.lemurproject.org/clueweb09/datasetInformation.php#Sample_Files">sample files</a>.
+</P>
+
+<p>&nbsp;</p>
+
+<A NAME="Services">
+<H3>Online Services</H3>
+</A>
+
+<P>
+The Lemur Project provides several online services to simplify use of
+the ClueWeb09 dataset.
+
+
+<ul>
+<LI> <P> <B> <A HREF="http://boston.lti.cs.cmu.edu/Services/clueweb09_batch/">Batch Query Service for ClueWeb09</A></B>:
+Use the <A HREF="http://lemurproject.org/indri.php">Indri search engine</A>
+to search the
+<A HREF="http://boston.lti.cs.cmu.edu/Data/clueweb09/">ClueWeb09</A> Category A English or Category B dataset
+</P></LI>
+<LI> <P> <B> <A HREF="http://boston.lti.cs.cmu.edu/Services/clueweb09_cata_english/">Category A - English Interactive Search</A></B>:
+Use the <A HREF="http://lemurproject.org/indri.php">Indri search engine</A>
+to interactively search the English part of the
+<A HREF="http://boston.lti.cs.cmu.edu/Data/clueweb09/">ClueWeb09</A>
+Category A dataset
+</P></LI>
+<LI> <P> <B> <A HREF="http://boston.lti.cs.cmu.edu/Services/clueweb09_catb/">Category B Interactive Search</A></B>:
+Use the <A HREF="http://lemurproject.org/indri.php">Indri search engine</A>
+to interactively search the
+<A HREF="http://boston.lti.cs.cmu.edu/Data/clueweb09/">ClueWeb09</A> Category B dataset
+</P></LI>
+<LI> <P> <B><A HREF="http://boston.lti.cs.cmu.edu/Services/clueweb09_wikipedia/">Wikipedia Interactive Search</A></B>:
+Use the <A HREF="http://lemurproject.org/indri.php">Indri search engine</A>
+to interactively search the Wikipedia part of the
+<A HREF="http://boston.lti.cs.cmu.edu/Data/clueweb09/">ClueWeb09</A>
+dataset
+</P></LI>
+
+<!---------------- No longer available -------------------------
+
+<LI> <P> <B><A HREF="http://boston.lti.cs.cmu.edu/Services/clueweb09_render/">Page Rendering</A></B>:
+Render selected
+<A HREF="http://boston.lti.cs.cmu.edu/Data/clueweb09/">ClueWeb09</A>
+web pages (text + images).
+</P></LI>
+----------------------------------------------------------------->
+<LI> <P> <B><A HREF="http://boston.lti.cs.cmu.edu/Services/clueweb09_kvlookup/">ClueWeb09 Attribute Lookup Service</A></B>:
+Fast lookup of ClueWeb09 document attributes.
+
+</ul>
+
+Some of these services require a user name and
+password. If your organization has a license to use the ClueWeb09
+dataset, you can obtain a username and password by contacting
+<A HREF="http://www.cs.cmu.edu/~callan/">Jamie Callan</A>.
+</P>
+
+
+<p>&nbsp;</p>
+
+<A NAME="Using">
+<H3>Using A Hosted Copy of the ClueWeb09 Dataset</H3>
+</A>
+
+<P>
+The ClueWeb09 dataset is available on several 'cloud computer'
+services (e.g., Open Cloud, the Pittsburgh Supercomputer Center).
+It can also be accessed using
+<A HREF="http://lemurproject.org/clueweb09.php/index.php#Services">search
+interfaces</A> provided by the <A HREF="http://lemurproject.org/">Lemur
+Project</A>.
+</P>
+
+<P>
+A ClueWeb09 dataset license is required before you can begin using
+a hosted copy of the dataset. There is no cost for a dataset license;
+it is free.
+</P>
+<p>
+The process for obtaining a ClueWeb09 dataset license is
+described below.
+<b><u> This process takes two weeks. Please allow enough time.
+We do not have the power to hurry the university administrators
+that must approve your license.
+</b></u>
+</p>
+<OL>
+<LI><P> Sign an
+<A HREF="organization_agreement.clueweb09.worder.Mar30-18.pdf">Organizational
+Agreement </A>.
+<B>This agreement must be signed by
+a person with the authority to sign agreements on behalf of your
+organization.</B> The person signing must also <B>initial each page</B>
+of the agreement on the bottom right corner.
+</P>
+<P>
+The organizational data license typically applies to a single research
+group or unit within a larger legal entity. For example, in a
+university, the organizational license might apply to a research group
+consisting of a few professors, and the students and staff doing
+research with them. In this case, the <B>organization</B> would be
+the name of the research group (e.g., the Information Retrieval
+Laboratory), and the <B>Corporation/Legal Entity</B> would be the name
+of the university.
+</P>
+</LI>
+<LI><p> Send the complete copy (<B>all six pages</B>) of the signed
+organizational agreement to Jess Maguire at the Language Technologies
+Institute. The preferred method of sending the signed organization agreement is to scan it into a pdf and <b>email</b>
+it to Jess (jlm4&nbsp;<!-- do not spam -->at&nbsp;<!-- do not spam -->andrew<!-- do not spam -->&nbsp;dot&nbsp;<!-- do not spam -->cmu&nbsp;dot&nbsp;edu).
+If you cannot send a pdf, you can fax the agreement. The fax number is +1 412-268-6298. <B>If you choose to fax the organizational agreement</B>, please
+notify Jess by email (jlm4&nbsp;<!-- do not spam -->at&nbsp;<!-- do not spam -->andrew<!-- do not spam -->&nbsp;dot&nbsp;<!-- do not spam -->cmu&nbsp;dot&nbsp;edu)
+so that we know to look for your fax. </p>
+
+<LI><P> <B>Each individual</B> who will use or have access to the dataset
+must sign an
+<A HREF="individual_agreement.clueweb09.Oct08-13.pdf">Individual
+Agreement</A>.
+<B>You must retain these signed individual agreements within your
+organization.</B>
+</P></LI>
+
+</OL>
+
+<p>&nbsp;</p>
+
+<A NAME="Obtaining">
+<H3>Obtaining a Copy of the ClueWeb09 Dataset</H3>
+</A>
+
+<P>
+The ClueWeb09 datasets are distributed by Carnegie Mellon University for
+research purposes only. A dataset may be obtained from Carnegie Mellon
+by signing a data license agreement with Carnegie Mellon University, and
+paying a fee that covers the cost of distributing the dataset.
+</P>
+
+<P>
+The process for obtaining a ClueWeb09 dataset is described below.
+<b><u> This process takes two weeks. Please allow enough time.
+We do not have the power to hurry the university administrators
+that must approve your license.
+</b></u>
+<OL>
+<LI><P> Sign an
+<A HREF="organization_agreement.clueweb09.worder.Mar30-18.pdf">Organizational
+Agreement </A>.
+<B>This agreement must be signed by
+a person with the authority to sign agreements on behalf of your
+organization.</B> The person signing must also <B>initial each page</B>
+of the agreement on the bottom right corner.
+</P>
+<P>
+The organizational data license typically applies to a single research
+group or unit within a larger legal entity. For example, in a
+university, the organizational license might apply to a research group
+consisting of a few professors, and the students and staff doing
+research with them. In this case, the <B>organization</B> would be
+the name of the research group (e.g., the Information Retrieval
+Laboratory), and the <B>Corporation/Legal Entity</B> would be the name
+of the university.
+</P>
+</LI>
+<LI><p> Send the complete copy (<B>all six pages</B>) of the signed
+organizational agreement to Jess Maguire at the Language Technologies
+Institute. The preferred method of sending the signed organization agreement is to scan it into a pdf and <b>email</b>
+it to Jess (jlm4&nbsp;<!-- do not spam -->at&nbsp;<!-- do not spam -->andrew<!-- do not spam -->&nbsp;dot&nbsp;<!-- do not spam -->cmu&nbsp;dot&nbsp;edu).
+If you cannot send a pdf, you can fax the agreement. The fax number is +1 412-268-6298. <B>If you choose to fax the organizational agreement</B>, please
+notify Jess by email (jlm4&nbsp;<!-- do not spam -->at&nbsp;<!-- do not spam -->andrew<!-- do not spam -->&nbsp;dot&nbsp;<!-- do not spam -->cmu&nbsp;dot&nbsp;edu)
+so that we know to look for your fax. </p>
+
+<LI><P> <B>Provide order information</B> to Jess Maguire by email or fax:
+<OL STYLE="list-style-type:lower-alpha;">
+<LI> Which version of the dataset you want:
+Category A, Category B, or Japanese;
+<LI> Which type of invoice you want: pdf (fast) or paper (slow);
+<LI> Mail <B>and</B> email address to which the invoice should be sent;
+<LI> Mailing address <b>and telephone number</b> to which the datasets should be sent (FedEx requires both the shipping address and telephone number);
+<LI> Preferred shipping method (1 day, 3 day, 1 week); and
+<LI> Method of payment (wire transfer, check, credit card).
+</OL>
+</P></LI>
+<LI><P> We will send you an email confirmation that we have received
+your order.
+</P></LI>
+<!-- (<font color=red><b>Currently unavailable due to disk shortages.</b></font>) <BR> -->
+<LI><P> We will send you an invoice for payment, by mail and/or email.
+The costs of each dataset are shown below. <BR> &nbsp; <BR>
+<TABLE CELLPADDING=6 BORDER=1>
+<TR> <TH> Item </TH> <TH> Cost </TH> <TH ALIGN=LEFT> Notes and Explanations </TH> </TR>
+<TR> <TH> ClueWeb09 <BR>
+The full dataset of about 1 billion pages <BR>
+(TREC 2009 &quot;Category A&quot; dataset)</TH>
+<TD ALIGN=RIGHT> $380</TD>
+<TD> Includes two 3.0 terabyte hard disks <BR>
+<I> (Check Compatiability with your operating system and hardware)</I></TD></TR>
+<TR> <TH> ClueWeb09-T09B <BR>
+A subset of about 50 million English pages <BR>
+(TREC 2009 &quot;Category B&quot; dataset)</TH>
+<TD ALIGN=RIGHT> $165</TD>
+<TD> Includes one 500 gigabyte hard disk</TD></TR>
+<TR> <TH> ClueWeb09-JA <BR>
+A subset of about 67 million Japanese pages <BR>
+(NTCIR-9 Intent Task dataset)</TH>
+<TD ALIGN=RIGHT> $165</TD>
+<TD> Includes one 500 gigabyte hard disk</TD></TR>
+<TR> <TH> ClueWeb09-T11Crowd <BR>
+(TREC-2011 Crowdsourcing dataset)</TH>
+<TD ALIGN=RIGHT> $0</TD>
+<TD> Web download only</TD></TR>
+<TR> <TH> Shipping</TH>
+<TD> (varies) </TD>
+<TD> US options: 1 day, 2 day, 7 day <BR> International options: 1 week </TD></TR>
+</TABLE>
+</P></LI>
+<LI><P> Payment information will be included on the invoice, and should be paid <B>in U.S. dollars only</B>.
+The dataset will not be shipped until your payment is confirmed. Payment can only be made via check, wire transfer, or credit card.<br />&nbsp;<br />
+If you are in a hurry, <B>credit card is the fastest payment method</B>.
+Please be aware that we are not automatically notified when funds
+arrive in CMU's bank account. After you make your payment, please
+<B>notify Jess Maguire by email</B> (jlm4&nbsp;<!-- do not spam -->at&nbsp;<!-- do not spam -->andrew<!-- do not spam -->&nbsp;dot&nbsp;<!-- do not spam -->cmu&nbsp;dot&nbsp;edu)
+so that we know to watch for it.
+</P></LI>
+<LI><P> We ship the dataset to the mailing address that you specified.
+</P></LI>
+<LI><P> <B>Each individual</B> who will use or have access to the dataset
+must sign an
+<A HREF="individual_agreement.clueweb09.Oct08-13.pdf">Individual
+Agreement</A>.
+<B>You must retain these signed individual agreements within your
+organization.</B>
+</P></LI>
+</OL>
+
+<p>&nbsp;</p>
+
+<A NAME="BeInformed">
+<H3>Staying Informed</H3>
+</A>
+
+<P>
+Additional information about the ClueWeb09 Dataset is available
+in the
+<A HREF="http://www.lemurproject.org/clueweb09/clueweb09info.php">ClueWeb09 Information Page</A>.
+New information is typically posted there.
+</P>
+
+<P>
+We also maintain a
+<a href="https://mailman.srv.cs.cmu.edu/mailman/listinfo/clueweb09">ClueWeb09 Mailing List</A>, however it is used very rarely. Please note that
+when you browse to this page, you may receive a warning stating that the security certificate for the domain
+is invalid. <b>The certificate is not invalid</b> - it is just self-signed by the list maintainers at
+Carnegie Mellon University. It is safe to accept the certificate.
+</P>
+
+<p>&nbsp;</p>
+<A NAME="Thanks">
+<H3>Acknowledgements</H3>
+</A>
+
+<P>
+<TABLE>
+<TR>
+<TD>
+<a href="http://www.nsf.gov/"><img src="http://lemurproject.org/images/nsfe_small.jpg" border=0 /></a>
+</TD>
+<TD>
+The creation of the ClueWeb09 dataset was sponsored by
+<A HREF="http://www.nsf.gov">National Science Foundation</A> grant
+<A HREF="http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=0841275">
+IIS-0841275</A>, under its <A HREF="http://www.nsf.gov/pubs/2008/nsf08560/nsf08560.htm">Cluster Exploratory</A> program.
+We thank <A HREF="http://www.google.com">Google</A> and
+<A HREF="http://www.ibm.com">IBM</A> for the use of the
+CluE computer cluster.
+We thank
+<A HREF="http://research.microsoft.com/en-us/people/nickcr/">Nick Craswell</A>,
+<A HREF="http://research.microsoft.com/en-us/people/fetterly/">Dennis
+Fetterly</A>,
+<A HREF="http://research.yahoo.com/bouncer_user/110">Don Metzler</A>,
+<A HREF="http://trec.nist.gov/">NIST's ITL Retrieval Group</A>, and
+<A HREF="http://yahoo.com/">Yahoo!</A> for their assistance and advice.
+We thank the
+<A HREF="http://wikimediafoundation.org/wiki/Home">Wikimedia Foundation</A>
+for enabling the inclusion of the English wikipedia.
+Any opinions, findings, conclusions
+or recommendations expressed on this Web site are those of the author(s) of
+this site, and do not necessarily reflect those of the sponsors.
+</TD>
+</TABLE>
+</P>
+
+<br>
+<br>
+
+</div>
+</div>
+<div id="footer">
+<table width="100%"><tr>
+<td style="vertical-align:middle">
+<table cellpadding="0" cellspacing="0">
+<tr><td rowspan="2"><a href="http://www.lemurproject.org/"><img src="https://lemurproject.org/logo/lemur_l_32.gif" border="0" alt="The Lemur Project" /></a></td>
+<td><font size="8px"><a href="mailto:admin@lemurproject.org">The Lemur Project</a></font></td></tr>
+<tr><td><font size="8px">Last modified:March 30, 2018. 20:59:58 pm</font></td></tr>
+</table>
+</td>
+<td style="text-align:right">
+<a href="http://ciir.cs.umass.edu/"><img src="https://lemurproject.org/images/CIIR_circletaglogo.jpg" width="50" height="50" border="0" alt="UMass-CIIR" /></a>
+<a href="http://www.lti.cs.cmu.edu/"><img src="https://lemurproject.org/images/ltilogo.gif" width="80" height="50" border="0" alt="CMU LTI logo" /></a>
+<a href="http://sourceforge.net/projects/lemur/"><img src="http://sflogo.sourceforge.net/sflogo.php?group_id=161383&amp;type=16" width="130" height="40" alt="The Lemur Project at SourceForge" /></a>
+</td>
+</tr></table>
+</div>
+</body>
+</html>
